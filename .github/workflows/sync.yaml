@@ -1,0 +1,45 @@
+on:
+  push:
+    branches:
+      - sync
+  pull_request:
+  schedule:
+    - cron: '0 0 0 1/1 *'
+
+name: Sync
+
+jobs:
+  Sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 2
+      - name: Fetch upstream
+        run: |
+          git clone --depth=1 https://github.com/webpack/webpack.js.org webpack.js.org
+      - name: Generate SUMMARY
+        run: |
+          set -x
+          mkdir -p webpack.js.org/src/content/.github/workflows
+          cp -a .github/workflows/gitbook.yaml webpack.js.org/src/content/.github/workflows/
+          cp book.json webpack.js.org/src/content/
+          cd webpack.js.org/src/content/
+          mv index.md README.md
+          npm init -f
+          npm install gitbook-summary
+          npx book sm -t "[Webpack 英文文档](https://github.com/webpack/webpack.js.org)" -i node_modules
+          rm -rf node_modules package.json package-lock.json
+          ls -la
+      - name: Push docs src
+        if: github.event_name == 'push'
+        uses: docker://pcit/pages
+        env:
+          PCIT_EMAIL: khs1994@khs1994.com
+          PCIT_GIT_TOKEN: ${{ secrets.PCIT_GIT_TOKEN }}
+          PCIT_GIT_URL: github.com/khs1994-website/webpack-docs.us-en
+          PCIT_KEEP_HISTORY: "1"
+          PCIT_LOCAL_DIR: webpack.js.org/src/content
+          PCIT_MESSAGE: Sync from webpack/webpack.js.org by PCIT ${{ github.sha }}
+          PCIT_TARGET_BRANCH: master
+          PCIT_USERNAME: khs1994
