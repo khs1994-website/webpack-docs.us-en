@@ -98,7 +98,6 @@
   * [Dll Plugin](plugins/dll-plugin.md)
   * [Environment Plugin](plugins/environment-plugin.md)
   * [Eval Source Map Dev Tool Plugin](plugins/eval-source-map-dev-tool-plugin.md)
-  * [Extended API Plugin](plugins/extended-api-plugin.md)
   * [Hashed Module Ids Plugin](plugins/hashed-module-ids-plugin.md)
   * [Hot Module Replacement Plugin](plugins/hot-module-replacement-plugin.md)
   * [Html Webpack Plugin](plugins/html-webpack-plugin.md)
