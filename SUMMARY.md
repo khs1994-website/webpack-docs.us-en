@@ -26,6 +26,7 @@
   * [Output](concepts/output.md)
   * [Plugins](concepts/plugins.md)
   * [Targets](concepts/targets.md)
+  * [Under The Hood](concepts/under-the-hood.md)
   * [Why Webpack](concepts/why-webpack.md)
 - Configuration
   * [Configuration Languages](configuration/configuration-languages.md)
