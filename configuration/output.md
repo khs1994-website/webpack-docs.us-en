@@ -322,6 +322,8 @@ Note this option is called filename but you are still allowed to use something l
 
 Note this option does not affect output files for on-demand-loaded chunks. For these files the [`output.chunkFilename`](#outputchunkfilename) option is used. Files created by loaders also aren't affected. In this case you would have to try the specific loader's available options.
 
+## Template strings
+
 The following substitutions are available in template strings (via webpack's internal [`TemplatedPathPlugin`](https://github.com/webpack/webpack/blob/master/lib/TemplatedPathPlugin.js)):
 
 | Template      | Description                                                                         |
@@ -352,7 +354,7 @@ The same as [`output.filename`](#outputfilename) but for [Asset Modules](/guides
 
 `string = 'window'`
 
-When targeting a library, especially the `libraryTarget` is `'umd'`, this option indicates what global object will be used to mount the library. To make UMD build available on both browsers and Node.js, set `output.globalObject` option to `'this'`.
+When targeting a library, especially when `libraryTarget` is `'umd'`, this option indicates what global object will be used to mount the library. To make UMD build available on both browsers and Node.js, set `output.globalObject` option to `'this'`.
 
 For example:
 
