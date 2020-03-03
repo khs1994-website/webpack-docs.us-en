@@ -16,8 +16,11 @@ jobs:
         with:
           fetch-depth: 2
       - name: Fetch upstream
+        id: upstream
         run: |
           git clone --depth=1 https://github.com/webpack/webpack.js.org webpack.js.org
+          UPSTREAM_COMMIT_SHA=`git -C webpack.js.org log --abbrev-commit --pretty="%h" -1`
+          echo "::set-output name=UPSTREAM_COMMIT_SHA::${UPSTREAM_COMMIT_SHA}"  
       - name: Generate SUMMARY
         run: |
           set -x
@@ -40,6 +43,6 @@ jobs:
           PCIT_GIT_URL: github.com/khs1994-website/webpack-docs.us-en
           PCIT_KEEP_HISTORY: "true"
           PCIT_LOCAL_DIR: webpack.js.org/src/content
-          PCIT_MESSAGE: Sync from webpack/webpack.js.org by PCIT ${{ github.sha }}
+          PCIT_MESSAGE: Sync from webpack/webpack.js.org ${{ steps.upstream.outputs.UPSTREAM_COMMIT_SHA }} by PCIT
           PCIT_TARGET_BRANCH: master
           PCIT_USERNAME: khs1994
