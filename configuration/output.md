@@ -130,6 +130,25 @@ module.exports = {
 ```
 
 
+## `output.chunkCallbackName`
+
+`string = 'webpackChunkwebpack'`
+
+The callback function name used by webpack for loading of chunks in Web Workers.
+
+__webpack.config.js__
+
+```javascript
+module.exports = {
+  //...
+  output: {
+    //...
+    chunkCallbackName: 'myCustomFunc'
+  }
+};
+```
+
+
 ## `output.crossOriginLoading`
 
 `boolean = false` `string: 'anonymous' | 'use-credentials'`
@@ -368,6 +387,28 @@ module.exports = {
     libraryTarget: 'umd',
     filename: 'myLib.js',
     globalObject: 'this'
+  }
+};
+```
+
+## `output.uniqueName`
+
+`string`
+
+A unique name of the webpack build to avoid multiple webpack runtimes to conflict when using globals. It defaults to [`output.library`](/configuration/output/#outputlibrary) name or the package name from `package.json` in the context, if both aren't found, it is set to an `''`.
+
+`output.uniqueName` will be used to generate unique globals for:
+
+- [`output.jsonpFunction`](/configuration/output/#outputjsonpfunction)
+- `output.chunkCallbackName`
+
+__webpack.config.js__
+
+```javascript
+module.exports = {
+  // ...
+  output: {
+    uniqueName: 'my-package-xyz'
   }
 };
 ```
