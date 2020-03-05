@@ -43,6 +43,6 @@ jobs:
           PCIT_GIT_URL: github.com/khs1994-website/webpack-docs.us-en
           PCIT_KEEP_HISTORY: "true"
           PCIT_LOCAL_DIR: webpack.js.org/src/content
-          PCIT_MESSAGE: Sync from webpack/webpack.js.org ${{ steps.upstream.outputs.UPSTREAM_COMMIT_SHA }} by PCIT
+          PCIT_MESSAGE: Sync from webpack/webpack.js.org@${{ steps.upstream.outputs.UPSTREAM_COMMIT_SHA }} by PCIT
           PCIT_TARGET_BRANCH: master
           PCIT_USERNAME: khs1994
