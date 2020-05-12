@@ -21,6 +21,7 @@
   * [Hot Module Replacement](concepts/hot-module-replacement.md)
   * [Concepts](concepts/index.md)
   * [The Manifest](concepts/manifest.md)
+  * [Module Federation](concepts/module-federation.md)
   * [Module Resolution](concepts/module-resolution.md)
   * [Modules](concepts/modules.md)
   * [Output](concepts/output.md)
