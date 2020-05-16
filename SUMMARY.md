@@ -95,6 +95,7 @@
   * [Automatic Prefetch Plugin](plugins/automatic-prefetch-plugin.md)
   * [Banner Plugin](plugins/banner-plugin.md)
   * [Commons Chunk Plugin](plugins/commons-chunk-plugin.md)
+  * [Context Exclusion Plugin](plugins/context-exclusion-plugin.md)
   * [Context Replacement Plugin](plugins/context-replacement-plugin.md)
   * [Define Plugin](plugins/define-plugin.md)
   * [Dll Plugin](plugins/dll-plugin.md)
