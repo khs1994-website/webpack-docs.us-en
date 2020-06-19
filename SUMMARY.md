@@ -110,6 +110,7 @@
   * [Limit Chunk Count Plugin](plugins/limit-chunk-count-plugin.md)
   * [Min Chunk Size Plugin](plugins/min-chunk-size-plugin.md)
   * [Module Concatenation Plugin](plugins/module-concatenation-plugin.md)
+  * [No Emit On Errors Plugin](plugins/NoEmitOnErrorsPlugin.md)
   * [Normal Module Replacement Plugin](plugins/normal-module-replacement-plugin.md)
   * [Prefetch Plugin](plugins/prefetch-plugin.md)
   * [Profiling Plugin](plugins/profiling-plugin.md)
