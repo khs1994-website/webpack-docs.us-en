@@ -77,6 +77,7 @@
   * [Integrations](guides/integrations.md)
   * [Lazy Loading](guides/lazy-loading.md)
   * [Output Management](guides/output-management.md)
+  * [Package Exports](guides/package-exports.md)
   * [Production](guides/production.md)
   * [Progressive Web Application](guides/progressive-web-application.md)
   * [Public Path](guides/public-path.md)
