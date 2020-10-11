@@ -14,6 +14,9 @@
   * [Javascript Parser Hooks](api/parser.md)
   * [Plugin API](api/plugins.md)
   * [Resolvers](api/resolvers.md)
+- Blog
+  * [Webpack 5 Release 2020 10 10](blog/2020-10-10-webpack-5-release.md)
+  * [Blog](blog/index.md)
 - Concepts
   * [Configuration](concepts/configuration.md)
   * [Dependency Graph](concepts/dependency-graph.md)
@@ -68,6 +71,7 @@
   * [Dependency Management](guides/dependency-management.md)
   * [Development Vagrant](guides/development-vagrant.md)
   * [Development](guides/development.md)
+  * [ECMA Script Modules](guides/ecma-script-modules.md)
   * [Advanced Entry](guides/entry-advanced.md)
   * [Environment Variables](guides/environment-variables.md)
   * [Getting Started](guides/getting-started.md)
