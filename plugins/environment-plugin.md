@@ -43,7 +43,7 @@ W> Variables coming from `process.env` are always strings.
 
 T> Unlike [`DefinePlugin`](/plugins/define-plugin), default values are applied to `JSON.stringify` by the `EnvironmentPlugin`.
 
-T> To specify an unset default value, use `null` instead of `undefined`.
+T> Default values of `null` and `undefined` behave differently. Use `undefined` for variables that _must_ be provided during bundling, or `null` if they are optional.
 
 W> If an environment variable is not found during bundling and no default value was provided, webpack will throw an error instead of a warning.
 
@@ -81,6 +81,23 @@ if ('false') { // <-- 'false' from DEBUG is taken
   console.log('Debugging output');
 }
 ```
+
+## Use Case: Git Version
+
+The following `EnvironmentPlugin` configuration provides `process.env.GIT_VERSION` (such as "v5.4.0-2-g25139f57f") and `process.env.GIT_AUTHOR_DATE` (such as "2020-11-04T12:25:16+01:00") corresponding to the last Git commit of the repository:
+
+```javascript
+const child_process = require('child_process');
+function git(command) {
+  return child_process.execSync(`git ${command}`, { encoding: 'utf8' }).trim();
+}
+
+new webpack.EnvironmentPlugin({
+  GIT_VERSION: git('describe --always'),
+  GIT_AUTHOR_DATE: git('log -1 --format=%aI'),
+});
+```
+
 
 ## `DotenvPlugin`
 

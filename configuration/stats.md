@@ -15,6 +15,8 @@ contributors:
   - anshumanv
   - pixel-ray
   - snitin315
+  - u01jmg3
+  - grrizzly
 ---
 
 `object` `string`
@@ -22,8 +24,6 @@ contributors:
 The `stats` option lets you precisely control what bundle information gets displayed. This can be a nice middle ground if you don't want to use `quiet` or `noInfo` because you want some bundle information, but not all of it.
 
 T> For webpack-dev-server, this property needs to be in the [`devServer` configuration object](/configuration/dev-server/#devserverstats-).
-
-T> For [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware), this property needs to be in the webpack-dev-middleware's `options` object.
 
 W> This option does not have any effect when using the Node.js API.
 
@@ -956,7 +956,7 @@ module.exports = {
 
 `boolean = true`
 
-Display children of the chunk groups (e. g. prefetched, preloaded chunks and assets).
+Display children of the chunk groups (e.g. prefetched, preloaded chunks and assets).
 
 ```javascript
 module.exports = {
@@ -1017,37 +1017,7 @@ module.exports = {
 ```
 
 
-W> `stats.warningsFilter` is deprecated in favor of `[stats.ignoreWarnings](#statsignoreWarnings)`.
-
-### `stats.ignoreWarnings`
-
-`RegExp` `function (WebpackError, Compilation) => boolean` `{module?: RegExp, file?: RegExp, message?: RegExp}`
-
-Tells `stats` to ignore specific warnings. This can be done with a `RegExp`, a custom `function` to select warnings based on the raw warning instance which is getting `WebpackError` and `Compilation` as arguments and returns a `boolean`, an `object` with the following properties:
-
-- `file` : A RegExp to select the origin file for the warning.
-- `message` : A RegExp to select the warning message.
-- `module` : A RegExp to select the origin module for the warning.
-
-`stats.ignoreWarnings` can be an `array` of any of the above.
-
-```javascript
-module.exports = {
-  //...
-  stats: {
-    ignoreWarnings: [
-      {
-        module: /module2\.js\?[34]/ // A RegExp
-      },
-      {
-        module: /[13]/,
-        message: /homepage/
-      },
-      (warning) => true
-    ]
-  }
-};
-```
+W> `stats.warningsFilter` is deprecated in favor of [`ignoreWarnings`](/configuration/other-options/#ignorewarnings).
 
 ### `stats.chunkRelations`
 

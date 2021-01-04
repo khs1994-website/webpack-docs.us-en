@@ -2,7 +2,6 @@
 
 - Api
   * [Command Line Interface](api/cli.md)
-  * [Compilation Hooks](api/compilation-hooks.md)
   * [Compilation Object](api/compilation-object.md)
   * [Compiler Hooks](api/compiler-hooks.md)
   * [Hot Module Replacement](api/hot-module-replacement.md)
@@ -16,6 +15,7 @@
   * [Resolvers](api/resolvers.md)
 - Blog
   * [Webpack 5 Release 2020 10 10](blog/2020-10-10-webpack-5-release.md)
+  * [Roadmap 2021 2020 12 08](blog/2020-12-08-roadmap-2021.md)
   * [Blog](blog/index.md)
 - Concepts
   * [Configuration](concepts/configuration.md)
@@ -111,7 +111,6 @@
   * [Html Webpack Plugin](plugins/html-webpack-plugin.md)
   * [Ignore Plugin](plugins/ignore-plugin.md)
   * [Plugins](plugins/index.md)
-  * [Internal Webpack Plugins](plugins/internal-plugins.md)
   * [Limit Chunk Count Plugin](plugins/limit-chunk-count-plugin.md)
   * [Min Chunk Size Plugin](plugins/min-chunk-size-plugin.md)
   * [Module Concatenation Plugin](plugins/module-concatenation-plugin.md)

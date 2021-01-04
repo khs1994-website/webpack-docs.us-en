@@ -67,12 +67,12 @@ module.exports = {
       minChunks: 1,
       maxAsyncRequests: 30,
       maxInitialRequests: 30,
-      automaticNameDelimiter: '~',
       enforceSizeThreshold: 50000,
       cacheGroups: {
         defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
-          priority: -10
+          priority: -10,
+          reuseExistingChunk: true
         },
         default: {
           minChunks: 2,
@@ -145,11 +145,23 @@ Maximum number of parallel requests when on-demand loading.
 
 Maximum number of parallel requests at an entry point.
 
+### `splitChunks.defaultSizeTypes`
+
+`[string] = ['javascript', 'unknown']`
+
+Sets the size types which are used when a number is used for sizes.
+
 ### `splitChunks.minChunks`
 
 `number = 1`
 
-Minimum number of chunks that must share a module before splitting.
+The minimum times must a module be shared among chunks before splitting.
+
+### `splitChunks.hidePathInfo`
+
+`boolean`
+
+Prevents exposing path info when creating names for parts splitted by maxSize.
 
 ### `splitChunks.minSize`
 
@@ -209,19 +221,17 @@ The difference between `maxInitialSize` and `maxSize` is that `maxInitialSize` w
 
 ### `splitChunks.name`
 
-`boolean = true` `function (module, chunks, cacheGroupKey) => string` `string`
+`boolean = false` `function (module, chunks, cacheGroupKey) => string` `string`
 
 Also available for each cacheGroup: `splitChunks.cacheGroups.{cacheGroup}.name`.
 
-The name of the split chunk. Providing `true` will automatically generate a name based on chunks and cache group key.
+The name of the split chunk. Providing `false` will keep the same name of the chunks so it doesn't change names unnecessarily. It is the recommended value for production builds.
 
 Providing a string or a function allows you to use a custom name. Specifying either a string or a function that always returns the same string will merge all common modules and vendors into a single chunk. This might lead to bigger initial downloads and slow down page loads.
 
 If you choose to specify a function, you may find the `chunk.name` and `chunk.hash` properties (where `chunk` is an element of the `chunks` array) particularly useful in choosing a name for your chunk.
 
 If the `splitChunks.name` matches an [entry point](/configuration/entry-context/#entry) name, the entry point will be removed.
-
-T> It is recommended to set `splitChunks.name` to `false` for production builds so that it doesn't change names unnecessarily.
 
 __main.js__
 
@@ -259,28 +269,6 @@ Running webpack with following `splitChunks` configuration would also output a c
 
 W> When assigning equal names to different split chunks, all vendor modules are placed into a single shared chunk, though it's not recommend since it can result in more code downloaded.
 
-### `splitChunks.automaticNamePrefix`
-
-`string = ''`
-
-Sets the name prefix for created chunks.
-
-```js
-module.exports = {
-  //...
-  optimization: {
-    splitChunks: {
-      automaticNamePrefix: 'general-prefix',
-      cacheGroups: {
-        react: {
-          // ...
-          automaticNamePrefix: 'react-chunks-prefix'
-        }
-      }
-    }
-  }
-};
-```
 
 ### `splitChunks.usedExports`
 
@@ -313,13 +301,13 @@ module.exports = {
 
 #### `splitChunks.cacheGroups.{cacheGroup}.priority`
 
-`number`
+`number = -20`
 
 A module can belong to multiple cache groups. The optimization will prefer the cache group with a higher `priority`. The default groups have a negative priority to allow custom groups to take higher priority (default value is `0` for custom groups).
 
 #### `splitChunks.cacheGroups.{cacheGroup}.reuseExistingChunk`
 
-`boolean`
+`boolean = true`
 
 If the current chunk contains modules already split out from the main bundle, it will be reused instead of a new one being generated. This can impact the resulting file name of the chunk.
 
