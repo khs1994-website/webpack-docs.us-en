@@ -90,7 +90,7 @@ By default webpack ships with the following flags:
 
 Starting CLI v4 and webpack v5, CLI imports the entire configuration schema from webpack core to allow tuning almost every configuration option from the command line.
 
-__Here's the list of all the core flags supported by webpack v5 with CLI v4 - [link](https://github.com/webpack/webpack-cli/tree/next/packages/webpack-cli#webpack-5)__
+__Here's the list of all the core flags supported by webpack v5 with CLI v4 - [link](https://github.com/webpack/webpack-cli/blob/master/OPTIONS.md)__
 
 For example if you want to enable performance hints in your project you'd use [this](https://webpack.js.org/configuration/performance/#performancehints) option in configuration, with core flags you can do -
 
@@ -238,7 +238,7 @@ webpack 5.4.0
 
 __Build source using a configuration file__
 
-Specifies a different [configuration](/configuration) file to pick up. Use this if you want to specify something different from `webpack.config.js`, which is one of the default.
+Specify a different [configuration](/configuration) file other than `webpack.config.js`, which is one of the defaults.
 
 ```bash
 npx webpack --config example.config.js
