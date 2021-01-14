@@ -47,7 +47,6 @@
   * [Output](configuration/output.md)
   * [Performance](configuration/performance.md)
   * [Plugins](configuration/plugins.md)
-  * [Resolve](configuration/resolve.md)
   * [Stats](configuration/stats.md)
   * [Target](configuration/target.md)
   * [Watch And Watch Options](configuration/watch.md)
