@@ -9,7 +9,6 @@
   * [Loader Interface](api/loaders.md)
   * [Logger Interface](api/logging.md)
   * [Module Methods](api/module-methods.md)
-  * [Module Variables](api/module-variables.md)
   * [Javascript Parser Hooks](api/parser.md)
   * [Plugin API](api/plugins.md)
   * [Resolvers](api/resolvers.md)
