@@ -38,7 +38,6 @@
   * [Dev Server](configuration/dev-server.md)
   * [Devtool](configuration/devtool.md)
   * [Entry And Context](configuration/entry-context.md)
-  * [Experiments](configuration/experiments.md)
   * [Mode](configuration/mode.md)
   * [Node](configuration/node.md)
   * [Optimization](configuration/optimization.md)
