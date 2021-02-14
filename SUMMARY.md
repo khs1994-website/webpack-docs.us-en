@@ -40,7 +40,6 @@
   * [Entry And Context](configuration/entry-context.md)
   * [Mode](configuration/mode.md)
   * [Node](configuration/node.md)
-  * [Optimization](configuration/optimization.md)
   * [Other Options](configuration/other-options.md)
   * [Performance](configuration/performance.md)
   * [Plugins](configuration/plugins.md)
