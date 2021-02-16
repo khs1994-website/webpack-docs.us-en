@@ -34,7 +34,6 @@
   * [Why Webpack](concepts/why-webpack.md)
 - Configuration
   * [Configuration Languages](configuration/configuration-languages.md)
-  * [Configuration Types](configuration/configuration-types.md)
   * [Dev Server](configuration/dev-server.md)
   * [Devtool](configuration/devtool.md)
   * [Entry And Context](configuration/entry-context.md)
